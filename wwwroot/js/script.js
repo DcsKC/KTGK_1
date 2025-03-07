@@ -1,7 +1,7 @@
 ﻿// Đọc danh sách hàng hóa
 async function getHangHoa() {
     try {
-        const response = await fetch("https://localhost:5081/api/hang_hoa");
+        const response = await fetch("http://localhost:5081/api/hang_hoa");
         if (!response.ok) throw new Error("Lỗi khi lấy dữ liệu");
 
         const data = await response.json();
@@ -34,7 +34,7 @@ async function updateGhiChu(id) {
     if (!newGhiChu) return;
 
     try {
-        const response = await fetch(`https://localhost:5081/api/hang_hoa/ghichu/${id}`, {
+        const response = await fetch(`http://localhost:5081/api/hang_hoa/ghichu/${id}`, {
             method: "PATCH",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ ghi_chu: newGhiChu }) // Gửi đúng dạng JSON
@@ -54,7 +54,7 @@ async function deleteHangHoa(id) {
     if (!confirm("Bạn có chắc muốn xóa?")) return;
 
     try {
-        const response = await fetch(`https://localhost:5081/api/hang_hoa/${id}`, {
+        const response = await fetch(`http://localhost:5081/api/hang_hoa/${id}`, {
             method: "DELETE"
         });
 
@@ -77,7 +77,7 @@ async function createHangHoa() {
     const data = { ma_hanghoa, ten_hanghoa, so_luong: parseInt(so_luong), ghi_chu };
 
     try {
-        const response = await fetch("https://localhost:5081/api/hang_hoa", {
+        const response = await fetch("http://localhost:5081/api/hang_hoa", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(data)
