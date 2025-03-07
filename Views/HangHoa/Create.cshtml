@@ -1,0 +1,18 @@
+﻿@model KTGK_1.Models.hang_hoa
+
+<h2>Thêm Hàng Hóa</h2>
+<form asp-action="Create" method="post">
+    <label>Mã hàng hóa:</label>
+    <input asp-for="ma_hanghoa" required /><br>
+
+    <label>Tên hàng hóa:</label>
+    <input asp-for="ten_hanghoa" required /><br>
+
+    <label>Số lượng:</label>
+    <input asp-for="so_luong" type="number" required /><br>
+
+    <label>Ghi chú:</label>
+    <input asp-for="ghi_chu" /><br>
+
+    <button type="submit">Thêm</button>
+</form>

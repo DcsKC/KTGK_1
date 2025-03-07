@@ -1,0 +1,35 @@
+﻿@model List<KTGK_1.Models.hang_hoa>
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Hàng Hóa</title>
+    <link rel="stylesheet" href="~/css/style.css" />
+</head>
+<body>
+    <h2>Danh sách hàng hóa</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Mã hàng</th>
+                <th>Tên hàng</th>
+                <th>Số lượng</th>
+                <th>Ghi chú</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var hang in Model)
+            {
+                <tr>
+                    <td>@hang.ma_hanghoa</td>
+                    <td>@hang.ten_hanghoa</td>
+                    <td>@hang.so_luong</td>
+                    <td>@hang.ghi_chu</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>
