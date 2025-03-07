@@ -15,7 +15,7 @@ namespace KTGK_1.Controllers
 
         public async Task<IActionResult> Index()
         {
-            string apiUrl = "http://localhost:5081/api/hang_hoa"; // Đổi thành API đã deploy nếu cần
+            string apiUrl = "http://localhost:5081/api/hang_hoa"; 
             var response = await _httpClient.GetStringAsync(apiUrl);
             var hangHoas = JsonConvert.DeserializeObject<List<hang_hoa>>(response);
             return View(hangHoas);
