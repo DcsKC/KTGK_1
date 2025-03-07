@@ -1,0 +1,17 @@
+﻿@model KTGK_1.Models.hang_hoa
+
+<h2>Cập nhật Hàng Hóa</h2>
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="ma_hanghoa" />
+
+    <label>Tên hàng hóa:</label>
+    <input asp-for="ten_hanghoa" required /><br>
+
+    <label>Số lượng:</label>
+    <input asp-for="so_luong" type="number" required /><br>
+
+    <label>Ghi chú:</label>
+    <input asp-for="ghi_chu" /><br>
+
+    <button type="submit">Cập nhật</button>
+</form>

@@ -1,0 +1,31 @@
+﻿@model List<KTGK_1.Models.hang_hoa>
+
+<h2>Danh sách Hàng Hóa</h2>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Mã hàng</th>
+            <th>Tên hàng</th>
+            <th>Số lượng</th>
+            <th>Ghi chú</th>
+            <th>Hành động</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var hh in Model)
+        {
+                <tr>
+                    <td>@hh.ma_hanghoa</td>
+                    <td>@hh.ten_hanghoa</td>
+                    <td>@hh.so_luong</td>
+                    <td>@hh.ghi_chu</td>
+                    <td>
+                        <a href="@Url.Action("Edit", "HangHoa", new { id = hh.ma_hanghoa })">Sửa</a> |
+                        <a href="@Url.Action("Delete", "HangHoa", new { id = hh.ma_hanghoa })" onclick="return confirm('Xác nhận xóa?');">Xóa</a>
+                    </td>
+                </tr>
+        }
+    </tbody>
+</table>
+
+<a href="@Url.Action("Create", "HangHoa")">Thêm hàng hóa</a>
